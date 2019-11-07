@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
@@ -17,16 +16,14 @@ import androidx.recyclerview.widget.RecyclerView;
  * @Author caojianbo
  * @Date 2019/11/7 10:41
  */
-public class StickyItemDecoration extends RecyclerView.ItemDecoration {
+public class StickyTestItemDecoration extends RecyclerView.ItemDecoration {
 
     private Paint mPaint = new Paint();
     private Paint mPaint2 = new Paint();
 
-    private Context context;
-
     private View stickyView;
 
-    public StickyItemDecoration() {
+    public StickyTestItemDecoration() {
         mPaint.setAntiAlias(true);
         mPaint.setStrokeWidth(10);
         mPaint2.setAntiAlias(true);
@@ -62,7 +59,7 @@ public class StickyItemDecoration extends RecyclerView.ItemDecoration {
             int position = parent.getChildAdapterPosition(view);
             int top = view.getTop() - view.getHeight();
             int bottom = top + view.getHeight();
-            Log.e(StickyItemDecoration.class.getSimpleName(), "=======itemHeight=====" + view.getHeight());
+            Log.e(StickyTestItemDecoration.class.getSimpleName(), "=======itemHeight=====" + view.getHeight());
             c.drawRect(0, top, parent.getWidth(), bottom, mPaint);
             c.drawText("item:" + position, view.getLeft(), view.getTop(), mPaint2);
         }
@@ -82,12 +79,12 @@ public class StickyItemDecoration extends RecyclerView.ItemDecoration {
 //        mPaint.setColor(Color.GREEN);
 //        c.drawRect(0, 0, parent.getRight(), 60, mPaint);
 
-//        Log.e(StickyItemDecoration.class.getSimpleName(), "===========onDrawOver=====");
+//        Log.e(StickyTestItemDecoration.class.getSimpleName(), "===========onDrawOver=====");
 //        int childCount = parent.getChildCount();//可见 item 数量
 //        for (int i = 0; i < childCount; i++) {
 //            View childAt = parent.getChildAt(i);
 //            int position = parent.getChildAdapterPosition(childAt);
-//            Log.e(StickyItemDecoration.class.getSimpleName(), "=position=" + position);
+//            Log.e(StickyTestItemDecoration.class.getSimpleName(), "=position=" + position);
 //            if (position == 0) {
 //                int offset = 0;
 //                if (childAt.getTop() <= 0) {
@@ -121,7 +118,7 @@ public class StickyItemDecoration extends RecyclerView.ItemDecoration {
 
         int offset = 0;
         if (stickyView.getTop() < 0) {
-            offset = -offset;
+            offset = -stickyView.getTop();
         } else {
             offset = stickyView.getTop();
         }

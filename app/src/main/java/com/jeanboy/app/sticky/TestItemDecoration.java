@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * @Author caojianbo
  * @Date 2019/11/7 14:32
  */
-public class StickyGroupItemDecoration extends RecyclerView.ItemDecoration {
+public class TestItemDecoration extends RecyclerView.ItemDecoration {
 
     private Paint mPaint;
     private Paint mPaint2;
@@ -22,7 +22,7 @@ public class StickyGroupItemDecoration extends RecyclerView.ItemDecoration {
     private View lastStickyView;
     private View currentStickyView;
 
-    public StickyGroupItemDecoration() {
+    public TestItemDecoration() {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setStrokeWidth(10);
