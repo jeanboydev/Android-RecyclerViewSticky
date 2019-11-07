@@ -3,7 +3,7 @@ package com.jeanboy.app.sticky;
 /**
  * @Synopsis
  * @Author caojianbo
- * @Date 2019/11/7 15:36
+ * @Date 2019/11/7 14:32
  */
-public class StickyItemDecoration {
+public class StickyGroupItemDecoration {
 }
